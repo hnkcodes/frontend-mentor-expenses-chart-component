@@ -1,0 +1,140 @@
+:root {
+  --red500: hsl(10, 79%, 65%);
+  --blue300: hsl(186, 34%, 65%);
+
+  --brown950: hsl(25, 47%, 15%);
+  --brown400: hsl(28, 10%, 53%);
+  --red100: hsl(26, 66%, 93%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red100);
+
+  font-family: "DM Sans", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.main-component,
+.summary-component {
+  border-radius: 0.4rem;
+  padding: 1.2rem;
+
+  width: 25rem;
+}
+
+.summary-component {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--red500);
+
+  margin-bottom: 0.8rem;
+
+  color: white;
+}
+
+.summary-heading {
+  font-size: 0.8rem;
+}
+
+.summary-number {
+  font-size: 1.5rem;
+  font-style: bold;
+}
+
+.main-component {
+  background-color: white;
+}
+
+.main-heading {
+  color: var(--brown950);
+  font-size: 1.5rem;
+  font-style: bold;
+
+  margin-bottom: 3rem;
+}
+
+.graph-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  border-bottom: 0.1rem solid var(--red100);
+  padding-bottom: 1rem;
+}
+
+.graph-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graph-bar {
+  width: 2.5rem;
+  background-color: var(--red500);
+  border-radius: 0.2rem;
+}
+
+.analysis-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  margin-top: 1rem;
+}
+
+.total-heading,
+.comparison-heading {
+  color: var(--brown400);
+  font-size: 0.8rem;
+}
+
+.total-number {
+  color: var(--brown950);
+  font-size: 2rem;
+  font-style: bold;
+}
+
+.comparison-number {
+  color: var(--brown950);
+  font-size: 0.8rem;
+}
+
+.inactive {
+  visibility: hidden;
+}
+
+.bright {
+  filter: brightness(1.5);
+}
+
+.amount-block {
+  background-color: var(--brown950);
+  color: white;
+  border-radius: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding: 0.2rem;
+}
+
+.blue-graph {
+  background-color: var(--blue300);
+}

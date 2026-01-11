@@ -1,7 +1,11 @@
 const graphComponent = document.querySelector(".graph-component");
 
 let dataState = [];
-let today = "wed";
+
+const daysOfWeek = ["sun", "mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+const todayDate = new Date();
+const todayDayOfWeek = todayDate.getDay();
+const day = daysOfWeek[todayDayOfWeek];
 
 const fetchData = async function () {
   const response = await fetch("data.json");
@@ -21,18 +25,21 @@ const init = async function () {
 init();
 
 const createMarkup = function (data) {
+  const maxAmount = Math.max(...data.map((i) => i.amount));
+
   const markup = data
-    .map(
-      (item) => `
+    .map((item) => {
+      const ratio = item.amount / maxAmount;
+      return `
     <div class="${item.day} graph-item">
           <div class="amount-block inactive"> $${item.amount}</div>
           <div class="graph-bar ${
-            item.day === today ? "blue-graph" : ""
-          }" style="height:${item.amount * 3}px;"></div>
+            item.day === day ? "blue-graph" : ""
+          }" style="--ratio: ${ratio}"></div>
           <p>${item.day}</p>
         </div>
-    `
-    )
+    `;
+    })
     .join("");
   return markup;
 };
